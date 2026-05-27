@@ -2,8 +2,17 @@
 
 unsigned long lastMillis = 0;
 
+void tMQTTPubSub(void *pvparameters) {
+  TickType_t xLastWakeTime;
+	xLastWakeTime = xTaskGetTickCount();
+	for ( ;; ) {
+    // TODO: Implement task
+    vTaskDelayUntil (& xLastWakeTime, pdMS_TO_TICKS (100)); // Sends every 1000ms
+	}
+}
+
 void mqttCallback(String &topic, String &payload) {
-    // Callback function
+    // Implement callback function
 }
 
 void mqttClient::wifiSetup() {

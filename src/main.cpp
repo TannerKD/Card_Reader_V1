@@ -19,4 +19,5 @@ void loop() {
 
     // RTOS Task Creation
     xTaskCreate(tPulseLED, "Pulse LED", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+    xTaskCreate(tMQTTPubSub, "MQTT Publisher/Subscriber", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
 }

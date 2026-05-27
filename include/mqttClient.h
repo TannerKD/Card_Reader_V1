@@ -6,6 +6,7 @@
 #include <string>
 
 void mqttCallback(String &topic, String &payload);
+void tMQTTPubSub(void *pvparameters);
 
 class mqttClient {
 public:
