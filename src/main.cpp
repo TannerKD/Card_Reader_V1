@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include "pins.h"
 #include "mqttClient.h"
+#include "cardReader.h"
 
 mqttClient client;
 
