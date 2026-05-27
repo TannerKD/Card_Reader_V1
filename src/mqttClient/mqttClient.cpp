@@ -18,7 +18,7 @@ void mqttCallback(String &topic, String &payload) {
 void mqttClient::wifiSetup() {
     // Reset WiFi connection
     WiFi.disconnect();
-    WiFi.begin(mqttClient::ssid, mqttClient::pass);
+    WiFi.begin(ssid, pass);
     while (WiFi.status() != WL_CONNECTED) {
         // TODO: Implement LCD waiting message
         delay(1000);
@@ -28,12 +28,12 @@ void mqttClient::wifiSetup() {
 
 void mqttClient::mqttSetup() {
     // Establish client connection
-    client.begin("broker.emqx.io", mqttClient::net);
+    client.begin("broker.emqx.io", net);
     client.onMessage(mqttCallback);
-    while (!client.connect(mqttClient::clientID,mqttClient::clientUser,mqttClient::clientPass)) {
+    while (!client.connect(clientID, clientUser, clientPass)) {
         // TODO: Implement LCD waiting message
         delay(1000);
     }
     // TODO: Implement client connected message
-    client.subscribe(mqttClient::topic);
+    client.subscribe(topic);
 }

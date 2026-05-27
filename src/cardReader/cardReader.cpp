@@ -11,3 +11,10 @@ void cardReader::setup() {
     }
     // Implement LCD output for chip found
 }
+
+void cardReader::readDataBlock(uint8_t blockNumber) {
+    bool success; // Used for error handling
+    if (((nfc->mifareclassic_IsTrailerBlock(blockNumber)) == 0) && (blockNumber != 0)) {
+        success = nfc->mifareclassic_AuthenticateBlock(uid, uidLength, blockNumber, keyNum, keyA);
+    }
+}

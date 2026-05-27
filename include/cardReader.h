@@ -8,7 +8,8 @@
 class cardReader {
 public:
     void setup();
-    void readDataBlock();
+    // reads data from block into blockData member variable. Possible block numbers are from 0-63.
+    void readDataBlock(uint8_t blockNumber);
 
 private:
     TwoWire PN532_I2C = TwoWire(1); // For hardware wire setup
