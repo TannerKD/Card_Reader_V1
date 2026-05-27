@@ -1,15 +1,20 @@
 #ifndef MQTTCLIENT_H
 #define MQTTCLIENT_H
 
+void mqttCallback(String &topic, String &payload);
+
 class mqttClient {
 public:
-    void mqttCallback(String &topic, String &payload);
     void wifiConnect();
     void mqttSetup();
 
 private:
-    const char* ssid= "MYWIRE-WPA-88-2GHZ";
+    const char* ssid = "MYWIRE-WPA-88-2GHZ";
     const char* pass = "Emooph7ieyaet4";
+    const char* clientID = "esp-12312312";
+    const char* clientUser = "public";
+    const char* clientPass = "public";
+    const char* topic = "/hello";
     WiFiClient net;
     MQTTClient client;
 };
