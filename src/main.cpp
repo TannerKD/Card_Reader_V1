@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "pins.h"
+#include "mqttClient.h"
 
 void setup() {
     pin_setup();
