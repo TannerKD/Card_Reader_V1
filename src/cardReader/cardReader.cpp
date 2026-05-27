@@ -1,5 +1,14 @@
 #include "cardReader.h"
 
+void tCardRead (void * pvParameters) {
+	TickType_t xLastWakeTime;
+	xLastWakeTime = xTaskGetTickCount();
+	for ( ;; ) {
+        // Scans continuously for an NFC tag
+	    vTaskDelayUntil (& xLastWakeTime, pdMS_TO_TICKS (2000)); // Checks every 500ms
+	}
+}
+
 void cardReader::setup() {
     // Set up hardware connections
     PN532_I2C.begin(Pins::PN532_SDA, Pins::PN532_SCL);

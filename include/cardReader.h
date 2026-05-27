@@ -5,6 +5,10 @@
 #include "Wire.h"
 #include "pins.h"
 
+extern cardReader nfcTagReader;
+
+void tCardRead(void *pvParameters);
+
 class cardReader {
 public:
     void setup();
