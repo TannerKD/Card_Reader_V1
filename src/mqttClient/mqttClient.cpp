@@ -1,6 +1,3 @@
-#include <WiFi.h>
-#include <MQTT.h>
-#include <string>
 #include "mqttClient.h"
 
 unsigned long lastMillis = 0;
@@ -9,7 +6,7 @@ void mqttCallback(String &topic, String &payload) {
     // Callback function
 }
 
-void mqttClient::wifiConnect() {
+void mqttClient::wifiSetup() {
     // Reset WiFi connection
     WiFi.disconnect();
     WiFi.begin(mqttClient::ssid, mqttClient::pass);

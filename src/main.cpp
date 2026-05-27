@@ -2,8 +2,12 @@
 #include "pins.h"
 #include "mqttClient.h"
 
+mqttClient client;
+
 void setup() {
     pin_setup();
+    client.mqttClient::wifiSetup();
+    client.mqttClient::mqttSetup();
 }
 
 void loop() {

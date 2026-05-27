@@ -1,11 +1,15 @@
 #ifndef MQTTCLIENT_H
 #define MQTTCLIENT_H
 
+#include <WiFi.h>
+#include <MQTT.h>
+#include <string>
+
 void mqttCallback(String &topic, String &payload);
 
 class mqttClient {
 public:
-    void wifiConnect();
+    void wifiSetup();
     void mqttSetup();
 
 private:
