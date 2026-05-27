@@ -5,6 +5,7 @@ void tCardRead (void * pvParameters) {
 	xLastWakeTime = xTaskGetTickCount();
 	for ( ;; ) {
         // Scans continuously for an NFC tag
+        // TODO: Implement finding NFC tag within a member function of cardReader
 	    vTaskDelayUntil (& xLastWakeTime, pdMS_TO_TICKS (2000)); // Checks every 500ms
 	}
 }

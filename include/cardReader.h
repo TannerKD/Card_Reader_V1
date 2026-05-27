@@ -14,6 +14,7 @@ public:
     void setup();
     // reads data from block into blockData member variable. Possible block numbers are from 0-63.
     void readCardData();
+    // TODO: Create a member function that retrieves basic information about the card and stores it into member variables.
 
 private:
     TwoWire PN532_I2C = TwoWire(1); // For hardware wire setup
