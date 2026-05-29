@@ -15,7 +15,8 @@ public:
     // reads data from block into blockData member variable. Possible block numbers are from 0-63.
     void readCardData();
     // TODO: Create a member function that retrieves basic information about the card and stores it into member variables.
-
+    void findNFCTag();
+    
 private:
     TwoWire PN532_I2C = TwoWire(1); // For hardware wire setup
     Adafruit_PN532 *nfc; // creates PN532 object
@@ -25,6 +26,7 @@ private:
     uint8_t cardData[47][16];
     uint8_t keyNum = 0; // Key number = 0: key A, Key number = 1: key B
     uint8_t keyA[6] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff}; // Basic key A for access to card
+    uint32_t cardid = 0;
 };
 
 

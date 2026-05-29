@@ -38,3 +38,19 @@ void cardReader::readCardData() {
     }
 
 }
+
+void cardReader::findNFCTag() {
+    if (nfc->readPassiveTargetID(PN532_MIFARE_ISO14443A,uid,&uidLength)) {
+        // Implement some output for successful card read
+        if (uidLength == 4) {
+            cardid <<= 8;
+            cardid |= uid[1];
+            cardid <<= 8;
+            cardid |= uid[2];
+            cardid <<= 8;
+            cardid |= uid[3];
+            // Implement some output saying this is a MiFare Classic Card, with cardid card number.
+            // TODO: Send cardid as a queue
+        }
+    }
+}
