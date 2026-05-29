@@ -12,6 +12,8 @@ namespace Pins {
     constexpr uint8_t LED_INTERNAL = 2;
     constexpr uint8_t PN532_SDA = 22;
     constexpr uint8_t PN532_SCL = 23;
+    constexpr uint8_t PN532_IRQ = 25;
+    constexpr uint8_t PN532_RST = 26;
     constexpr uint8_t LCD_DB7 = 25;
     constexpr uint8_t LCD_DB6 = 26;
     constexpr uint8_t LCD_DB5 = 27;
