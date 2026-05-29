@@ -5,16 +5,12 @@
 #include "Wire.h"
 #include "pins.h"
 
-extern cardReader nfcTagReader;
-
-void tCardRead(void *pvParameters);
-
+// Class Definition
 class cardReader {
 public:
     void setup();
     // reads data from block into blockData member variable. Possible block numbers are from 0-63.
     void readCardData();
-    // TODO: Create a member function that retrieves basic information about the card and stores it into member variables.
     void findNFCTag();
     
 private:
@@ -29,5 +25,10 @@ private:
     uint32_t cardid = 0;
 };
 
+// Variables
+extern cardReader nfcTagReader;
+
+// Functions
+void tCardRead(void *pvParameters);
 
 #endif
